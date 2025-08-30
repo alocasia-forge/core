@@ -42,5 +42,12 @@ resource "aws_subnet" "data" {
   tags              = { Name = "${local.name_prefix}-data-${count.index}" }
 }
 
+resource "aws_ecr_repository" "this" {
+  name                 = "${local.name_prefix}-repository"
+  image_tag_mutability = "MUTABLE"
+  force_delete         = true
 
-
+  image_scanning_configuration {
+    scan_on_push = false
+  }
+}

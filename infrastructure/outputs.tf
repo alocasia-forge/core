@@ -13,3 +13,7 @@ output "private_subnets" {
 output "data_subnets" {
   value = aws_subnet.data[*]
 }
+
+output "ecr_repository" {
+  value = aws_ecr_repository.this
+}
