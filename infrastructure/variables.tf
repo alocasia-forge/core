@@ -15,3 +15,10 @@ variable "azs" {
   type        = list(string)
   default     = ["eu-west-1a", "eu-west-1b", "eu-west-1c"]
 }
+
+variable "key_name" {
+  description = "The name of the SSH key pair"
+  type        = string
+  default     = "alocasia-keypair"
+  
+}
